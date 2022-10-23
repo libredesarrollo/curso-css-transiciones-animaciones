@@ -1,0 +1,30 @@
+body {
+    height: 100vh;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: #FFF;
+    background: transparent;
+    font-family: roboto;
+    font-size: 40px;
+    border: 4px solid #5500FF;
+    border-radius: 5px;
+    font-weight: bold;
+    letter-spacing: 0;
+    padding: 10px 40px;
+    position: relative;
+    /* overflow: hidden; */
+    transition: all 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a:hover {
+    box-shadow: 0 0 40px 40px #5500FF inset;
+}

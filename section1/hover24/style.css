@@ -1,0 +1,45 @@
+body {
+    height: 100vh;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: #FFF;
+    background: transparent;
+    font-family: roboto;
+    font-size: 40px;
+    /* border: 4px solid #5500FF; */
+    border-radius: 1px;
+    font-weight: bold;
+    letter-spacing: 0;
+    padding: 10px 40px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform:translateX(-50%);
+    width: 0;
+    height: 0;
+    background: red;
+    border-radius: 50%;
+    transition: width 0.5s, height 0.5s, border-radius 0.5s .17s;
+    z-index: -1;
+}
+
+a:hover:before{
+    width: 100%;
+    height: 300%;
+    border-radius: 0;
+}

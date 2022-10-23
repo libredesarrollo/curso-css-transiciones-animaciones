@@ -1,0 +1,82 @@
+body {
+    height: 100vh;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: #262626;
+    font-family: roboto;
+    font-size: 40px;
+    border: 5px solid #5500FF;
+    border-radius: 15px;
+    font-weight: 300;
+    letter-spacing: 0;
+    padding: 50px 120px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+a span,
+a .icon {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition: all .3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a span{
+    left: 0;
+    width: 75%;
+}
+
+a .icon{
+    /* left: 100%; */
+    right: 0;
+    width: 25%;
+}
+
+a .icon svg {
+    color:#FFF;
+    width: 40px;
+    height: 40px;
+    transition: all .3s;
+}
+
+a .icon:before{
+   content: '';
+   background: #5500FF;
+   width: 5px;
+   height: 100%;
+   position: absolute;
+   left: 0;
+}
+
+a:hover{
+    border: 5px solid #CC3322;
+    border-radius: 2px;
+}
+
+a:hover span{
+    left: -100%;
+}
+
+a:hover .icon{
+    /* left: 0; */
+    width: 100%;
+}
+a:hover .icon:before{
+   background: transparent;
+}
+a:hover .icon svg{
+    width: 60px;
+    height: 60px;
+    color: #CC3322;
+}

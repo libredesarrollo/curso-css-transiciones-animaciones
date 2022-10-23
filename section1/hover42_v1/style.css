@@ -1,0 +1,95 @@
+body {
+    height: 100vh;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: #FFF;
+    font-family: roboto;
+    font-size: 40px;
+    border: 1px solid #5500FF;
+    font-weight: bold;
+    letter-spacing: 0;
+    padding: 10px 40px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 2px;
+    transition: all 0.4s;
+}
+
+a::before,
+a::after,
+span::before,
+span::after {
+    content: '';
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    z-index: -1;
+    background: #5500FF;
+
+    border-radius: 50%;
+    transform: scale(0.1);
+
+    transition: all 0.1s;
+}
+
+a:hover::before,
+a:hover::after,
+a:hover span::before,
+a:hover span::after {
+    transform: scale(1.4);
+}
+
+
+a::before {
+    top: 90%;
+    left: 0;
+}
+
+a:hover::before {
+    top: 0;
+}
+
+
+a::after {
+    top: 90%;
+    left: 25%;
+    transition-delay: 0.1s;
+}
+
+a:hover::after {
+    top: 0;
+}
+
+
+
+a span::before {
+    top: 90%;
+    left: 50%;
+    transition-delay: 0.2s;
+}
+
+a:hover span::before {
+    top: 0;
+}
+
+
+
+a span::after {
+    top: 90%;
+    left: 75%;
+    transition-delay: 0.3s;
+}
+
+a:hover span::after {
+    top: 0;
+}
+
+a:hover {
+    color: #111;
+}

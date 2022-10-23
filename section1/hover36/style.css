@@ -1,0 +1,85 @@
+body {
+    height: 100vh;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: transparent;
+    font-family: roboto;
+    font-size: 40px;
+    /* border: 4px solid #5500FF; */
+    font-weight: bold;
+    letter-spacing: 0;
+    /* padding: 10px 40px; */
+    position: relative;
+    /* overflow: hidden; */
+    transition: all 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+}
+
+a span{
+    padding: 8px 5px;
+    transition: all 0.5s;
+    /* position: relative; */
+
+    transform-style: preserve-3d;
+}
+
+
+
+
+a span:nth-child(1){
+    color: white;
+    background: purple;
+    transform: translateY(0) rotateX(0);
+}
+a:hover span:nth-child(1){
+    transform: translateY(50%) rotateX(90deg);
+}
+
+a span:nth-child(2){
+    color: purple;
+    background: white;
+    transform: translateY(0) rotateX(0);
+}
+a:hover span:nth-child(2){
+    transform: translateY(-50%) rotateX(-90deg);
+}
+
+
+
+
+a span::before{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.5s;
+    
+}
+
+
+a span:nth-child(1)::before{
+    color: purple;
+    background: white;
+    content: 'Purple';
+    transform: translateY(-50%) translateZ(32px) rotateX(-90deg);
+}
+
+a span:nth-child(2)::before{
+    color: white;
+    background: purple;
+    content: 'White';
+    transform: translateY(50%) translateZ(32px) rotateX(90deg);
+}
