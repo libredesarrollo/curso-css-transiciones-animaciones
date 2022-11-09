@@ -1,0 +1,20 @@
+body {
+    height: 100vh;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    color:#000;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: roboto;
+    transition:  all 1s;
+}
+
+h1:hover{
+    color: #FFF;
+    text-shadow: 0 0 10px #5500FF, 0 0 20px #5500FF, 0 0 30px #5500FF, 0 0 40px #5500FF, 0 0 50px #5500FF;
+}

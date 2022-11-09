@@ -1,0 +1,35 @@
+body {
+    height: 100vh;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-size: 60px;
+    color: #CCC;
+    text-transform: uppercase;
+    font-family: roboto;
+}
+
+h1::before{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #5500FF;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+
+    transition:  all 0.5s;
+}
+
+h1:hover::before{
+    height: 100%;
+    width: 100%;
+}
