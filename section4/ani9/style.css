@@ -1,0 +1,58 @@
+body {
+    height: 100vh;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: #FFF;
+    font-family: roboto;
+    font-size: 40px;
+    border: 4px solid #FFF;
+    padding: 40px 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+a::before {
+    content: '';
+    background: #F00;
+    top: -45px;
+    left: 0px;
+    width: 85px;
+    height: 300px;
+    position: absolute;
+    transform: rotate(-30deg);
+    animation: move .9s linear infinite;
+    transition: all .5s;
+    z-index: -1;
+}
+
+@keyframes move {
+    from {
+        left: 0px;
+    }
+
+    to {
+        left: 100%;
+    }
+}
+
+@keyframes move {
+    from {
+        left: -80px;
+    }
+
+    to {
+        left: 130%;
+    }
+}
+
+a:hover::before {
+    width: 100%;
+    animation: none;
+    transform: rotate(0);
+}

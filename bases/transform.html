@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,
+        section {
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        section {
+            flex-direction: column;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            background: #5500FF;
+            /* transition-property: all;
+            transition-duration: 1s; */
+            transition: all 1s;
+        }
+
+        div img {
+            width: 100%;
+        }
+
+        div.traslate:hover {
+            transform: translate(40px);
+            transform: translate(-40px);
+            transform: translate(-40px, 10px);
+            transform: translate(-50%, 10px);
+            transform: translateX(40px) translateY(10px);
+            transform: translateY(-20%);
+        }
+
+        div.rotate:hover {
+            transform: rotate(40deg);
+            transform: rotate(360deg);
+            transform: rotate(720deg);
+            transform: rotate(-10deg);
+            transform: rotateX(80deg) rotateY(180deg);
+            transform: rotateX(1turn);
+            transform: rotateY(1turn);
+            transform: rotate(1turn, 360deg);
+        }
+
+        div.scale:hover{
+            transform: scale(1);
+            transform: scale(2);
+            transform: scale(.5);
+            transform: scale(.5,2);
+            transform: scaleX(2) scaleY(.7);
+            transform: scaleY(.7);
+        }
+
+        div.skew:hover{
+            transform: skew(40deg);
+            transform: skew(-40deg);
+            transform: skewX(-40deg);
+            transform: skewY(-40deg);
+            transform: skewY(-40deg) skew(10deg);
+            transform: skewY(-40deg) scale(1.5) rotate(20deg);
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="traslate"></div>
+        <div class="rotate"></div>
+        <div class="scale"></div>
+        <div class="skew"></div>
+    </section>
+    <section>
+        <div class="traslate"><img src="tiger.jpg"></div>
+        <div class="rotate"><img src="tiger.jpg"></div>
+        <div class="scale"><img src="tiger.jpg"></div>
+        <div class="skew"><img src="tiger.jpg"></div>
+
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+body {
+    height: 100vh;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: #5500FF;
+    font-size: 45px;
+    border: 5px solid #5500FF;
+    font-weight: 300;
+    letter-spacing: 0;
+    padding: 20px 40px;
+    transition: color 800ms;
+    border-radius: 2px;
+
+    transition: all 0.5s;
+
+    position: relative;
+    overflow: hidden;
+}
+
+a:hover {
+    color: #FFF;
+    border: 5px solid #FFF;
+    animation: rotate 0.5s linear;
+}
+
+@keyframes rotate {
+    25% {
+        transform: rotate(15deg);
+    }
+
+    50% {
+        transform: rotate(-15deg);
+    }
+
+    75% {
+        transform: rotate(7deg);
+    }
+
+    100% {
+        transform: rotate(-7deg);
+    }
+}

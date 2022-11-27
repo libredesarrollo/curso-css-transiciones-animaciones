@@ -1,0 +1,49 @@
+/* :root{
+    --ani:0s
+} */
+
+body {
+    height: 100vh;
+    background: #111;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.ripple,
+.ripple::before,
+.ripple::after {
+    content: '';
+    background: rgba(255, 0, 0, 1);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, .3);
+    position: relative;
+    /* animation: shadow 3s linear infinite 0s; */
+    animation: shadow 3s linear infinite var(--ani, 0s);
+}
+
+.ripple::before,
+.ripple::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.ripple::before {
+    /* animation: shadow 3s linear infinite 1s; */
+    --ani:1s
+}
+
+.ripple::before {
+    /* animation: shadow 3s linear infinite 2s; */
+    --ani:2s
+}
+
+@keyframes shadow{
+    to{
+        box-shadow: 0 0 0 15px rgba(0, 0, 0, 0);
+    }
+}

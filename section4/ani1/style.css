@@ -1,0 +1,36 @@
+body {
+    height: 100vh;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 60px;
+    text-transform: uppercase;
+    font-family: roboto;
+    font-weight: bold;
+
+    background: linear-gradient(90deg, #00FF55 5%, #5500FF 30%, #00FF55 80%);
+    background-size: 200% auto;
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    text-fill-color:transparent;
+    -webkit-text-fill-color:transparent;
+
+    animation: textgrad 1.5s linear infinite;
+/* transition: all 5s; */
+}
+
+/* h1:hover {
+    background-position: 200% center;
+} */
+
+@keyframes textgrad{
+    to {
+        background-position: 200% center;
+    }
+}

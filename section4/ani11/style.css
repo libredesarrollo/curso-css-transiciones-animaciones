@@ -1,0 +1,50 @@
+body {
+    height: 100vh;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+    font-family: roboto;
+    font-size: 40px;
+    /* border: 4px solid #5500FF; */
+    border-radius: 1px;
+    font-weight: bold;
+    letter-spacing: 0;
+    padding: 10px 40px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+}
+
+a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background-image: repeating-linear-gradient(90deg, #FFF, #FFF 20px, #5500FF 20px, #5500FF 40px);
+    z-index: -1;
+    animation: bg 5s linear infinite;
+}
+
+a:hover::before{
+    /* animation: none; */
+    /* animation: bg 5s linear 1;
+    animation-fill-mode: backwards; */
+    animation-play-state: paused;
+}
+
+@keyframes bg {
+    to{
+        transform: translateX(-50%);
+    }    
+}

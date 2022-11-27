@@ -1,0 +1,91 @@
+body {
+    height: 100vh;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    width: 600px;
+    height: 200px;
+    border-radius: 50px;
+    background: #FFF;
+    position: relative;
+    border: 5px solid #5500FF;
+}
+
+button span {
+    font-size: 70px;
+    color: #5500FF;
+}
+
+button svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    color: #FFF;
+}
+
+button:focus {
+    animation: extend 1s linear;
+    animation-fill-mode: forwards;
+}
+
+button:focus span {
+    animation: hide 1s linear;
+    animation-fill-mode: forwards;
+}
+
+button:focus svg {
+    animation: show 1s linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes extend {
+    0% {
+        width: 600px;
+        height: 200px;
+        border-radius: 100px;
+    }
+
+    20% {
+        width: 600px;
+        height: 200px;
+        background: #5500FF;
+    }
+
+    100% {
+        width: 200px;
+        height: 200px;
+        border-radius: 100px;
+        background: #5500FF;
+    }
+}
+
+@keyframes hide {
+    0% {
+        opacity: 1;
+    }
+
+    30% {
+        color: #FFF;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes show {
+
+    0%,
+    70% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

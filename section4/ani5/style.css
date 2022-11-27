@@ -1,0 +1,27 @@
+body {
+    height: 100vh;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    color: #FFF;
+    font-family: roboto;
+    font-size: 90px;
+    letter-spacing: 20px;
+    text-shadow: 0 1px 0 #FFF, 0 2px 0 #FFF, 0 3px 0 #FFF, 0 4px 0 #FFF, 10px 20px 5px rgba(255, 255, 255, .2);
+    animation: rotate 2s linear infinite;
+    animation-direction: alternate;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(15deg);
+    }
+
+    to {
+        transform: rotate(-15deg);
+    }
+}

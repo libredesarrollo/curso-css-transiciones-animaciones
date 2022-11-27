@@ -1,0 +1,118 @@
+body {
+    height: 100vh;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: #5500FF;
+    /* background: #111; */
+    font-family: roboto;
+    font-size: 40px;
+    /* border: 1px solid #5500FF; */
+    font-weight: bold;
+    letter-spacing: 0;
+    padding: 10px 40px;
+    position: relative;
+    /* overflow: hidden; */
+    border-radius: 1px;
+    background: #111;
+    transition: all 0.4s;
+}
+
+a::before,
+a::after {
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    background: #5500FF;
+    /* transition: all 1.5s; */
+    z-index: -2;
+}
+
+a::before {
+    transition-delay: 0.8s;
+}
+
+a::after {
+    /* opacity: 0; */
+    width: 10px;
+    height: 10px;
+    background: #F00;
+    /* box-shadow: -30px 0px 1px 1px; */
+    z-index: 3;
+    top: -2px;
+    left: -2px;
+    /* animation: square 2s linear infinite; */
+}
+
+/* a:hover:after {
+    opacity: 1;
+    box-shadow: 0px 0px 1px 1px;
+    left: 100%;
+} */
+
+a:hover:after{
+    animation: square 2s linear infinite;
+}
+
+a:hover:before {
+    background: #FFF;
+}
+
+a:hover {
+    color: #FFF;
+}
+
+a span{
+    position: absolute;
+    top: -2px;    
+    left: -2px;
+    width: 10px;
+    height: 10px;
+    background: #FFF;
+    box-shadow: 0px 0px 1px 1px;
+}
+
+a:hover span{
+    animation: square 2s linear infinite;
+    animation-delay: .1s;
+}
+
+@keyframes square {
+    0% {
+        /* box-shadow: -30px 0px 1px 1px; */
+        top: -2px;
+        left: -2px;
+    }
+
+    25% {
+        /* box-shadow: 0px 0px 1px 1px; */
+        top: -2px;
+        left: 100%;
+    }
+
+    50% {
+        /* box-shadow: 0px 30px 1px 1px; */
+        top: 100%;
+        left: 100%;
+    }
+
+    75% {
+        /* box-shadow: 0px 0 1px 1px; */
+        top: 100%;
+        left: -2px;
+    }
+
+    100% {
+        /* box-shadow: -30px 0 1px 1px; */
+        top: -2px;
+        left: -2px;
+    }
+}

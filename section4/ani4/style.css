@@ -1,0 +1,113 @@
+body {
+    height: 100vh;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rebound {
+    display: flex;
+    font-size: 70px;
+    font-weight: bold;
+    font-family: roboto;
+    position: relative;
+    letter-spacing: 18px;
+}
+
+.rebound span {
+    color: #7733FF;
+    text-shadow: 0 3px #5500FF, 0 5px #5500FF, 0 7px #5500FF;
+}
+
+.rebound span:nth-child(1) {
+    animation: bounce 1s ease infinite;
+}
+
+.rebound span:nth-child(2) {
+    animation: bounce 1s ease infinite .1s;
+}
+
+.rebound span:nth-child(3) {
+    animation: bounce 1s ease infinite .2s;
+}
+
+.rebound span:nth-child(4) {
+    animation: bounce 1s ease infinite .3s;
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1, 1) translateY(0);
+    }
+
+    10% {
+        transform: scale(1.2, .8) translateY(0);
+    }
+
+    30% {
+        transform: scale(.8, 1.2) translateY(-70px);
+    }
+
+    50% {
+        transform: scale(1.05, .95) translateY(0);
+    }
+
+    55% {
+        transform: scale(1, 1) translateY(-10px);
+    }
+
+    100% {
+        transform: scale(1, 1) translateY(0);
+    }
+}
+
+/***** sombras */
+
+.rebound::before,
+.rebound::after,
+.shadow::before,
+.shadow::after {
+    content: "";
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 50px;
+    height: 5px;
+    top: 90px;
+    z-index: -1;
+    left: -5px;
+    border-radius: 50%;
+    animation: scale 1s linear infinite;
+}
+
+.rebound::after {
+    left: 57px;
+    animation: scale 1s linear infinite .1s;
+}
+
+.shadow::before {
+    left: 116px;
+    animation: scale 1s linear infinite .2s;
+}
+.shadow::after {
+    left: 178px;
+    animation: scale 1s linear infinite .3s;
+}
+
+@keyframes  scale{
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(0.4);
+    }
+    50% {
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
