@@ -1,0 +1,28 @@
+body {
+    height: 100vh;
+    animation: bgchange 10s infinite;
+}
+
+@keyframes bgchange {
+
+    0%,
+    100% {
+        background: #FFF;
+    }
+
+    20% {
+        background: red;
+    }
+
+    40% {
+        background: yellow;
+    }
+
+    60% {
+        background: blue;
+    }
+
+    80% {
+        background: green;
+    }
+}
