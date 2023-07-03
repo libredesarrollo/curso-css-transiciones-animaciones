@@ -1,0 +1,76 @@
+body {
+    height: 100vh;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    position: relative;
+}
+
+.container div{
+    width: 200px;
+    height: 70px;
+    position: absolute;
+    top: 0;
+    border-radius: 5px;
+    border: solid 2px rgba(0, 0, 0, .2);
+    transform-origin: left;
+    transform: rotate(0);
+}
+
+.container div:nth-child(1){
+    background-color: #FF5500;
+    animation: card-ani-1 4s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+.container div:nth-child(2){
+    background-color: #5500FF;
+    animation: card-ani-2 4s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+.container div:nth-child(3){
+    background-color: #FF0055;
+    animation: card-ani-3 4s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+@keyframes card-ani-1{
+    0%,
+    15%,
+    100%{
+        transform: rotate(0);
+    }
+
+    30%,
+    70%{
+        transform: rotate(-70deg);
+    }
+}
+
+@keyframes card-ani-2{
+    0%,
+    15%,
+    100%{
+        transform: rotate(0);
+    }
+
+    30%,
+    70%{
+        transform: rotate(-40deg);
+    }
+}
+@keyframes card-ani-3{
+    0%,
+    15%,
+    100%{
+        transform: rotate(0);
+    }
+
+    30%,
+    70%{
+        transform: rotate(-10deg);
+    }
+}
+

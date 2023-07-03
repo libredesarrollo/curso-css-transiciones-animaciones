@@ -1,0 +1,48 @@
+body {
+    height: 100vh;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Roboto;
+    color: #FFF;
+}
+
+.container {
+    display: flex;
+    gap: 12px;
+    width: 90vw;
+}
+
+.tab {
+    position: relative;
+    height: 80vh;
+    cursor: pointer;
+    flex: 1;
+    transition: all .8s;
+}
+
+.tab h3 {
+    font-size: 25px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+}
+
+.tab img {
+    border-radius: 50px;
+    height: 80vh;
+    width: 100%;
+    object-fit: cover;
+}
+
+.tab.active {
+    flex: 4;
+}
+
+.tab.active h3 {
+    opacity: 1;
+    transition: opacity .4s .4s;
+}

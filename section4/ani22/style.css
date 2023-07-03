@@ -1,0 +1,25 @@
+body {
+    height: 100vh;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 8px solid #FFF;
+    border-color: #FFF transparent #FFF transparent;
+    animation:  loading 1s linear infinite;
+}
+
+@keyframes loading{
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
