@@ -23,6 +23,13 @@ a {
     overflow: hidden;
 }
 
+/* ==========================================================================
+   CÓDIGO INEFICIENTE (COMENTADO):
+   La animación del pseudo-elemento ::before modificando la propiedad 'left' 
+   es ineficiente porque 'left' pertenece al flujo geométrico del documento (Layout/Reflow).
+   Esto obliga a la CPU del navegador a recalcular las posiciones y dimensiones físicas
+   de la página 60 veces por segundo en un ciclo continuo infinito.
+   ==========================================================================
 a::before {
     content: '';
     background: #F00;
@@ -39,21 +46,45 @@ a::before {
 
 @keyframes move {
     from {
-        left: 0px;
-    }
-
-    to {
-        left: 100%;
-    }
-}
-
-@keyframes move {
-    from {
         left: -80px;
     }
 
     to {
         left: 130%;
+    }
+}
+*/
+
+/* ==========================================================================
+   CÓDIGO EFICIENTE (OPTIMIZADO POR GPU):
+   Fijamos el elemento en su posición inicial física con 'left: -80px' y animamos
+   exclusivamente la propiedad 'transform: translateX()'. 'transform' no dispara
+   las fases de Layout ni Paint del navegador; en su lugar, delega la traslación
+   directamente al hilo de composición de la GPU, asegurando 60 FPS ultra fluidos.
+   ========================================================================== */
+a::before {
+    content: '';
+    background: #F00;
+    top: -45px;
+    left: -80px; /* Posición inicial fija */
+    width: 85px;
+    height: 300px;
+    position: absolute;
+    transform: translateX(0) rotate(-30deg);
+    animation: move .9s linear infinite;
+    /* 'transition: all .5s' es ineficiente porque vigila todas las propiedades del elemento.
+       La reemplazamos por propiedades específicas: transform y width */
+    transition: transform .5s, width .5s;
+    z-index: -1;
+}
+
+@keyframes move {
+    from {
+        transform: translateX(0) rotate(-30deg);
+    }
+    to {
+        /* Desplazamos el destello usando aceleración por hardware de la GPU */
+        transform: translateX(380px) rotate(-30deg);
     }
 }
 

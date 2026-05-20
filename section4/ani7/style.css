@@ -43,6 +43,12 @@ button:focus svg {
     animation-fill-mode: forwards;
 }
 
+/* ==========================================================================
+   CÓDIGO INEFICIENTE (COMENTADO):
+   Modificar 'width' y 'height' dentro de los keyframes obliga al navegador
+   a recalcular constantemente las dimensiones geométricas físicas del elemento
+   del DOM (Layout/Reflow) en cada frame, sobrecargando la CPU.
+   ==========================================================================
 @keyframes extend {
     0% {
         width: 600px;
@@ -60,6 +66,33 @@ button:focus svg {
         width: 200px;
         height: 200px;
         border-radius: 100px;
+        background: #5500FF;
+    }
+}
+*/
+
+/* ==========================================================================
+   CÓDIGO EFICIENTE (OPTIMIZADO POR GPU):
+   En lugar de alterar el ancho del elemento de forma física, utilizamos
+   'transform: scaleX()' para encoger horizontalmente el elemento.
+   Esto se procesa enteramente en la GPU (Composite) y previene cualquier reflow.
+   Para evitar distorsiones del texto interno durante el escalado, los textos
+   e iconos internos son animados simultáneamente con opacidades ('opacity'), 
+   una práctica profesional excelente en interfaces fluidas.
+   ========================================================================== */
+@keyframes extend {
+    0% {
+        transform: scaleX(1);
+    }
+
+    20% {
+        transform: scaleX(1);
+        background: #5500FF;
+    }
+
+    100% {
+        /* Encogemos horizontalmente de 600px a 200px (1/3 = 0.3333) */
+        transform: scaleX(0.3333);
         background: #5500FF;
     }
 }

@@ -18,6 +18,11 @@ body {
     height: 60px;
 }
 
+/* ==========================================================================
+   CÓDIGO INEFICIENTE (COMENTADO):
+   Transicionar la propiedad 'width' altera el flujo geométrico y provoca un 
+   impacto negativo en la fase de Layout de renderizado del navegador.
+   ==========================================================================
 .search input {
     background: #FFF;
     border: 0;
@@ -28,6 +33,27 @@ body {
     box-sizing: border-box;
     border-radius: 4px;
     transition: width .2s;
+}
+*/
+
+/* ==========================================================================
+   CÓDIGO EFICIENTE (OPTIMIZADO POR GPU):
+   Definimos el ancho completo estático (250px) y aplicamos una transformación 
+   de escala horizontal 'transform: scaleX(0.24)' (60px / 250px) con origen en
+   la izquierda. La transición sobre 'transform' se procesa en la GPU.
+   ========================================================================== */
+.search input {
+    background: #FFF;
+    border: 0;
+    font-size: 20px;
+    padding: 10px;
+    height: 60px;
+    width: 250px; /* Ancho máximo fijo */
+    box-sizing: border-box;
+    border-radius: 4px;
+    transform: scaleX(0.24); /* Encogido por defecto */
+    transform-origin: left;
+    transition: transform .2s; /* Transición por hardware */
 }
 
 .search .btn {
@@ -43,8 +69,19 @@ body {
     transition: transform .2s;
 }
 
+/* ==========================================================================
+   CÓDIGO INEFICIENTE (COMENTADO):
 .search.active input {
     width: 250px;
+}
+*/
+
+/* ==========================================================================
+   CÓDIGO EFICIENTE (OPTIMIZADO POR GPU):
+   Expandimos el control al 100% de su escala real.
+   ========================================================================== */
+.search.active input {
+    transform: scaleX(1);
 }
 
 .search.active .btn {
