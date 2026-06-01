@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Animations & Transitions</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f5; color: #333; padding: 2rem; max-width: 1200px; margin: 0 auto; }
+    h1 { margin-bottom: 0.5rem; }
+    p { color: #666; margin-bottom: 2rem; }
+    .section { margin-bottom: 2.5rem; }
+    .section h2 { background: #fff; padding: 0.75rem 1rem; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 1rem; font-size: 1.2rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 0.75rem; }
+    .grid a { display: block; padding: 0.6rem 0.8rem; background: #fff; border-radius: 6px; text-decoration: none; color: #333; box-shadow: 0 1px 2px rgba(0,0,0,0.08); transition: transform 0.15s, box-shadow 0.15s; }
+    .grid a:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.12); }
+    .grid a.v { border-left: 3px solid #f59e0b; }
+    .grid a.proy { border-left: 3px solid #8b5cf6; }
+  </style>
+</head>
+<body>
+  <h1>CSS Animations & Transitions</h1>
+  <p>Ejercicios del módulo — Hover, Transiciones, Animaciones y Proyectos</p>
+
+  <div class="section">
+    <h2>Section 1 — Hovers básicos</h2>
+    <div class="grid">
+      <a href="section1/hover1/">hover1</a>
+      <a href="section1/hover2/">hover2</a>
+      <a href="section1/hover3/">hover3</a>
+      <a href="section1/hover4/">hover4</a>
+      <a href="section1/hover5/">hover5</a>
+      <a href="section1/hover6/">hover6</a>
+      <a href="section1/hover7/">hover7</a>
+      <a href="section1/hover8/">hover8</a>
+      <a href="section1/hover9/">hover9</a>
+      <a href="section1/hover10/">hover10</a>
+      <a href="section1/hover11/">hover11</a>
+      <a href="section1/hover12/">hover12</a>
+      <a href="section1/hover13/">hover13</a>
+      <a href="section1/hover14/">hover14</a>
+      <a href="section1/hover14_v/" class="v">hover14_v</a>
+      <a href="section1/hover15/">hover15</a>
+      <a href="section1/hover16/">hover16</a>
+      <a href="section1/hover17/">hover17</a>
+      <a href="section1/hover17_v/" class="v">hover17_v</a>
+      <a href="section1/hover18/">hover18</a>
+      <a href="section1/hover19/">hover19</a>
+      <a href="section1/hover20/">hover20</a>
+      <a href="section1/hover21/">hover21</a>
+      <a href="section1/hover22/">hover22</a>
+      <a href="section1/hover22_v/" class="v">hover22_v</a>
+      <a href="section1/hover23/">hover23</a>
+      <a href="section1/hover24/">hover24</a>
+      <a href="section1/hover25/">hover25</a>
+      <a href="section1/hover26/">hover26</a>
+      <a href="section1/hover27/">hover27</a>
+      <a href="section1/hover28/">hover28</a>
+      <a href="section1/hover28_v1/" class="v">hover28_v1</a>
+      <a href="section1/hover28_v2/" class="v">hover28_v2</a>
+      <a href="section1/hover28_v3/" class="v">hover28_v3</a>
+      <a href="section1/hover28_v4/" class="v">hover28_v4</a>
+      <a href="section1/hover29/">hover29</a>
+      <a href="section1/hover30/">hover30</a>
+      <a href="section1/hover30_v/" class="v">hover30_v</a>
+      <a href="section1/hover31/">hover31</a>
+      <a href="section1/hover31_v/" class="v">hover31_v</a>
+      <a href="section1/hover32/">hover32</a>
+      <a href="section1/hover32_v/" class="v">hover32_v</a>
+      <a href="section1/hover33/">hover33</a>
+      <a href="section1/hover34/">hover34</a>
+      <a href="section1/hover35/">hover35</a>
+      <a href="section1/hover35_v/" class="v">hover35_v</a>
+      <a href="section1/hover36/">hover36</a>
+      <a href="section1/hover37/">hover37</a>
+      <a href="section1/hover37_v1/" class="v">hover37_v1</a>
+      <a href="section1/hover37_v2/" class="v">hover37_v2</a>
+      <a href="section1/hover37_v3/" class="v">hover37_v3</a>
+      <a href="section1/hover37_v4/" class="v">hover37_v4</a>
+      <a href="section1/hover38/">hover38</a>
+      <a href="section1/hover39/">hover39</a>
+      <a href="section1/hover39_v1/" class="v">hover39_v1</a>
+      <a href="section1/hover39_v2/" class="v">hover39_v2</a>
+      <a href="section1/hover40/">hover40</a>
+      <a href="section1/hover40_v1/" class="v">hover40_v1</a>
+      <a href="section1/hover41/">hover41</a>
+      <a href="section1/hover41_v1/" class="v">hover41_v1</a>
+      <a href="section1/hover41_v2/" class="v">hover41_v2</a>
+      <a href="section1/hover42/">hover42</a>
+      <a href="section1/hover42_v1/" class="v">hover42_v1</a>
+      <a href="section1/hover43/">hover43</a>
+      <a href="section1/hover43_v1/" class="v">hover43_v1</a>
+      <a href="section1/hover44/">hover44</a>
+      <a href="section1/hover45/">hover45</a>
+      <a href="section1/hover46/">hover46</a>
+      <a href="section1/hover46_v1/" class="v">hover46_v1</a>
+      <a href="section1/hover47/">hover47</a>
+      <a href="section1/hover47_v1/" class="v">hover47_v1</a>
+      <a href="section1/hover47_v2/" class="v">hover47_v2</a>
+      <a href="section1/hover47_v3/" class="v">hover47_v3</a>
+      <a href="section1/hover47_v4/" class="v">hover47_v4</a>
+      <a href="section1/hover48/">hover48</a>
+      <a href="section1/hover49/">hover49</a>
+      <a href="section1/hover50/">hover50</a>
+      <a href="section1/hover50_v/" class="v">hover50_v</a>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Section 2 — Transiciones</h2>
+    <div class="grid">
+      <a href="section2/hover01/">hover01</a>
+      <a href="section2/hover02/">hover02</a>
+      <a href="section2/hover02_con/">hover02_con</a>
+      <a href="section2/hover02_trans/">hover02_trans</a>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Section 3 — Hovers avanzados</h2>
+    <div class="grid">
+      <a href="section3/hover1/">hover1</a>
+      <a href="section3/hover1_v/" class="v">hover1_v</a>
+      <a href="section3/hover2/">hover2</a>
+      <a href="section3/hover3/">hover3</a>
+      <a href="section3/hover4/">hover4</a>
+      <a href="section3/hover5/">hover5</a>
+      <a href="section3/hover6/">hover6</a>
+      <a href="section3/hover7/">hover7</a>
+      <a href="section3/hover8/">hover8</a>
+      <a href="section3/hover9/">hover9</a>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Section 4 — Animaciones</h2>
+    <div class="grid">
+      <a href="section4/ani1/">ani1</a>
+      <a href="section4/ani2/">ani2</a>
+      <a href="section4/ani3/">ani3</a>
+      <a href="section4/ani4/">ani4</a>
+      <a href="section4/ani5/">ani5</a>
+      <a href="section4/ani6/">ani6</a>
+      <a href="section4/ani7/">ani7</a>
+      <a href="section4/ani8/">ani8</a>
+      <a href="section4/ani8v/" class="v">ani8v</a>
+      <a href="section4/ani9/">ani9</a>
+      <a href="section4/ani10/">ani10</a>
+      <a href="section4/ani11/">ani11</a>
+      <a href="section4/ani12/">ani12</a>
+      <a href="section4/ani12v/" class="v">ani12v</a>
+      <a href="section4/ani13/">ani13</a>
+      <a href="section4/ani14/">ani14</a>
+      <a href="section4/ani15/">ani15</a>
+      <a href="section4/ani16/">ani16</a>
+      <a href="section4/ani17/">ani17</a>
+      <a href="section4/ani18/">ani18</a>
+      <a href="section4/ani19/">ani19</a>
+      <a href="section4/ani20/">ani20</a>
+      <a href="section4/ani21/">ani21</a>
+      <a href="section4/ani22/">ani22</a>
+      <a href="section4/ani23/">ani23</a>
+      <a href="section4/ani24/">ani24</a>
+      <a href="section4/ani25/">ani25</a>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Section 5 — Proyectos</h2>
+    <div class="grid">
+      <a href="section5/proy1/" class="proy">proy1</a>
+      <a href="section5/proy2/" class="proy">proy2</a>
+      <a href="section5/proy3/" class="proy">proy3</a>
+      <a href="section5/proy3_v/" class="proy v">proy3_v</a>
+      <a href="section5/proy4/" class="proy">proy4</a>
+      <a href="section5/proy5/" class="proy">proy5</a>
+    </div>
+  </div>
+</body>
+</html>
